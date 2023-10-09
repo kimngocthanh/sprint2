@@ -3,15 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HomePage from './compoment/home_page';
+import HomePage from './compoment/home_page/Home';
 import CartDetail from './compoment/cart/CartDetail';
+import Cart from './compoment/cart/Cart';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './compoment/login/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/home/cart' element={<Cart />} />
+      <Route path='/home/cartDetail' element={<CartDetail />} />
+      <Route path='/home/login' element={<Login />} />
+    </Routes>
+    </BrowserRouter>
 
     {/* <HomePage /> */}
-    <CartDetail />
+    {/* <CartDetail /> */}
+    {/* <Cart /> */}
   </React.StrictMode>
 );
 
